@@ -10,7 +10,7 @@ RUN yum update \
   && cd /tmp/lnmp1.4/ \
   && groupadd www \
   && useradd -s /sbin/nologin -g www www \
-  && ./install.sh < /tmp/answer.txt
+  && ./install.sh < /tmp/answer.txt \
   && sed -i '/\[global\]/a daemonize = no' /usr/local/php/etc/php-fpm.conf \
   && sed -i 's/listen = \/tmp\/php-cgi\.sock/listen = 9000/' /usr/local/php/etc/php-fpm.conf
 
