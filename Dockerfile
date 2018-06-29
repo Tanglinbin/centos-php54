@@ -12,7 +12,10 @@ RUN yum update \
   && useradd -s /sbin/nologin -g www www \
   && ./install.sh < /tmp/answer.txt \
   && sed -i '/\[global\]/a daemonize = no' /usr/local/php/etc/php-fpm.conf \
-  && sed -i 's/listen = \/tmp\/php-cgi\.sock/listen = 9000/' /usr/local/php/etc/php-fpm.conf
+  && sed -i 's/listen = \/tmp\/php-cgi\.sock/listen = 9000/' /usr/local/php/etc/php-fpm.conf \
+  && yum clean all \
+  && rm -rf /var/cache/yum \
+  && rm -rf /tmp/*
 
 # CMD ["/tmp/lnmp1.4/install.sh < /tmp/answer.txt"]
 # Enter your choice (1, 2, 3, 4, 5, 6, 7 or 0): 选择数据库输入0
