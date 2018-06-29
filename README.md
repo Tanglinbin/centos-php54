@@ -1,1 +1,1 @@
-# centos-php54
+通过运行lnmp一键安装到脚本包，自动化centos上安装php5.4.45.同时屏蔽了nginx的安装
