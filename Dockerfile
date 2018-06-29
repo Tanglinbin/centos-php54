@@ -19,4 +19,4 @@ RUN yum update \
 # Press any key to install...or Press Ctrl+c to cancel 发送任意键数值信号
 
 EXPOSE 9000
-CMD ["php-fpm"]
+CMD ["php"]
