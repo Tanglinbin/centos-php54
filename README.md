@@ -13,8 +13,6 @@ echo 'listen = 9000'; \
 
 listen = /tmp/php-cgi.sock 替换成 listen = 9000
 
-[global]
-
-sed  '/\[option\]/a Hello World' input
-
+shell语句为：
 sed -i '/\[global\]/a daemonize = no' /usr/local/php/etc/php-fpm.conf
+sed -i 's/listen = \/tmp\/php-cgi\.sock/listen = 9000/' /usr/local/php/etc/php-fpm.conf
