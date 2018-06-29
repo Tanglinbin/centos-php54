@@ -1,16 +1,12 @@
 FROM centos:7.5.1804
 
+COPY ./answer.txt /tmp
+
 RUN yum update \
-  && yum install -y wget expect \
+  && yum install -y wget \
   && wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz -P /tmp \
   && tar -zxf /tmp/lnmp1.4.tar.gz -C /tmp \
-  && sed -ri 's/Install_Nginx/#Install_Nginx/g' /tmp/lnmp1.4/install.sh \
-  && cat > /tmp/answer.txt << EOF \
-     0 \
-     3 \
-     1 \
-     0 \
-     EOF
+  && sed -ri 's/Install_Nginx/\#Install_Nginx/g' /tmp/lnmp1.4/install.sh
 
 CMD ["/tmp/lnmp1.4/install.sh", "<", "/tmp/answer.txt"]
 # Enter your choice (1, 2, 3, 4, 5, 6, 7 or 0): 选择数据库输入0
