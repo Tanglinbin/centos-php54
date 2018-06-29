@@ -8,7 +8,7 @@ RUN yum update \
   && tar -zxf /tmp/lnmp1.4.tar.gz -C /tmp \
   && sed -ri 's/Install_Nginx/\#Install_Nginx/g' /tmp/lnmp1.4/install.sh
 
-CMD ["/tmp/lnmp1.4/install.sh", "<", "/tmp/answer.txt"]
+CMD ["/tmp/lnmp1.4/install.sh < /tmp/answer.txt"]
 # Enter your choice (1, 2, 3, 4, 5, 6, 7 or 0): 选择数据库输入0
 # Enter your choice (1, 2, 3, 4, 5, 6 or 7): 选择php5.4输入3
 # Enter your choice (1, 2 or 3): 选择不安装内存分配，输入1
