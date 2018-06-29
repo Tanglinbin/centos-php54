@@ -6,7 +6,7 @@ RUN yum update \
   && yum install -y wget \
   && wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz -P /tmp \
   && tar -zxf /tmp/lnmp1.4.tar.gz -C /tmp \
-  && sed -ri 's/Install_Nginx/\#Install_Nginx/g' /tmp/lnmp1.4/install.sh
+  && sed -ri 's/Install_Nginx/\#Install_Nginx/g' /tmp/lnmp1.4/install.sh \
   && cd /tmp/lnmp1.4/; \
   ./install.sh < /tmp/answer.txt
 
