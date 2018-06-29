@@ -8,6 +8,8 @@ RUN yum update \
   && tar -zxf /tmp/lnmp1.4.tar.gz -C /tmp \
   && sed -ri 's/Install_Nginx/\#Install_Nginx/g' /tmp/lnmp1.4/install.sh \
   && cd /tmp/lnmp1.4/ \
+  && groupadd www \
+  && useradd -s /sbin/nologin -g www www
   && ./install.sh < /tmp/answer.txt
 
 # CMD ["/tmp/lnmp1.4/install.sh < /tmp/answer.txt"]
